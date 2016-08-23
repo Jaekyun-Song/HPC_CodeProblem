@@ -38,26 +38,41 @@ int main(int argc, char *argv[])
 	}
 
 	// prepare output variables
-	int maxProduct;
-	char* digits = new char[8];
+	int maxProduct4;
+	int maxProduct8;
+	char* digits4 = new char[4];
+	char* digits8 = new char[8];
 
 	// call parallel function		
-	EightDigits(str, &maxProduct, digits);
+	FourAndEightDigits(str, &maxProduct4, digits4, &maxProduct8, digits8);
 
 	// print output
 	cout << "============ from Parallel ==============" << endl;
-	cout << "Maximum product of eight adjacent digits = " << maxProduct << " " << endl;
-	cout << "The eight digits = ";
+	cout << "Maximum product of 4 adjacent digits = " << maxProduct4 << " " << endl;
+	cout << "The 4 digits = ";
+	for (int i = 0; i < 4; i++) {
+		cout << digits4[i];
+	}
+	cout << endl << endl;
+
+	cout << "Maximum product of 8 adjacent digits = " << maxProduct8 << " " << endl;
+	cout << "The 8 digits = ";
 	for (int i = 0; i < 8; i++) {
-		cout << digits[i];
-	}	
+		cout << digits8[i];
+	}
 	cout << endl;
 
 	// release assigned memories
-	if (digits != NULL) {
-		delete[](digits);
-		digits = NULL;
+	if (digits4 != NULL) {
+		delete[](digits4);
+		digits4 = NULL;
 	}	
+	if (digits8 != NULL) {
+		delete[](digits8);
+		digits8 = NULL;
+	}
+	int a;
+	cin >> a;
     return 0;
 }
 
