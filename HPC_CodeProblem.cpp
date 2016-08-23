@@ -52,6 +52,12 @@ int main(int argc, char *argv[])
 		cout << digits[i];
 	}	
 	cout << endl;
+
+	// release assigned memories
+	if (digits != NULL) {
+		delete[](digits);
+		digits = NULL;
+	}	
     return 0;
 }
 
